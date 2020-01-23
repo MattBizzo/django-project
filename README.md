@@ -1,1 +1,1 @@
-#Bizzo's Django project
+# Bizzo's Django project
