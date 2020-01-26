@@ -4,23 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bizzo Blog - Your mother is a hamster</title>
+    <title>Bizzo Blog - Your mother was a hamster</title>
 </head>
 <body>
     <div>
-        <h1><a href="/">Your mother is a hamster!!!</a></h1>
+        <h1><a href="/">Your mother was a hamster!!!</a></h1>
     </div>
 
     <div>
-        <h3> <a href="">First</a></h3>
-        <p>publicado: 14.05.2020, 12:14</p>
-        <p>Mauris nec nisi enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent efficitur mi sit amet nisi congue, at tempor dui gravida. Vivamus luctus risus purus, non eleifend ex imperdiet ut. Nulla augue nibh, dignissim in nibh in, tristique egestas magna. Quisque blandit mattis orci nec hendrerit. Donec quis fermentum leo. Vivamus feugiat arcu id ex consectetur, at bibendum elit commodo. Donec molestie ligula nibh. Cras tellus dolor, dignissim ac mauris nec, viverra consectetur nisi. Phasellus magna sapien, aliquet eget nunc ut, venenatis tincidunt dolor.</p>
+        {% for post in last_posts %}
+        <div>
+            <h3> <a href="">{{ post.title }}</a></h3>
+            <p> Publicado em {{ post.published_date }} por {{post.author}}</p>
+            <p> {{ post.text|linebreaks }} </p>
+        {% endfor %}
     </div>
 
-    <div>
-        <h3><a href="">Second</a></h3>
-        <p>publicado: 15.06.2020, 12:14</p>
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-    </div>
 </body>
 </html>
