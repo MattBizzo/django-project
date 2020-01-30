@@ -1,4 +1,6 @@
 body h1 a{
+    font-size: 3rem;
+    font-weight: bold;
     color: #212529;
     text-decoration: none;
     transition: color 0.5s;
@@ -7,6 +9,15 @@ body h1 a{
 body h1 a:hover{
     color: #3d6385;
     text-decoration: none;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.date {
+    font-size: 12px;
 }
 
 .jumbotron {

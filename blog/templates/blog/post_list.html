@@ -1,52 +1,17 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
+{% extends 'blog/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-
-    <title>Bizzo Blog - Your mother was a hamster</title>
-</head>
-
-<body>
-    <main>
-        <section class="jumbotron text-center">
-            <div class="container">
-                <h1><a href="/">Your mother was a hamster!!!</a></h1>
-                <p class="lead text-muted">
-                    Um blog para eu escrever o que quiser...
-                </p>
-            </div>
-        </section>
-        <div class='py-5 bg-light'>
-            <div class="container">
-                <div class="row">
-
-                    {% for post in last_posts %}
-                    <div class="col-md-4">
-                        <div class='card mb-4 shadow-sm' style='width: 18rem;'>
-                            <div class="card-body">
-                                <h5 class="card-title"> <a href="">{{ post.title }}</a></h5>
-                                <p class="card-subtitle mb-2 text-muted"> Publicado em {{ post.published_date }} por
-                                    {{post.author}}</p>
-                                <p class="card-text"> {{ post.text|linebreaksbr|slice:':250' }}... </p>
-                                <a href="#" class="btn btn-primary">Abrir Texto</a>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-
+{% block content %}
+    {% for post in last_posts %}
+        <div class="col-md-4">
+            <div class='card mb-4 shadow-sm' style='width: 18rem;'>
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="date card-subtitle mb-2 text-muted"> Publicado em {{ post.published_date }} por
+                        {{post.author}}</p>
+                    <p class="card-text"> {{ post.text|linebreaksbr|slice:':250' }}... </p>
+                    <a href="#" class="btn btn-primary">Abrir Texto</a>
                 </div>
             </div>
-
         </div>
-    </main>
-</body>
-
-</html>
+    {% endfor %}
+{%endblock%}
