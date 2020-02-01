@@ -3,13 +3,13 @@
 {% block content %}
     {% for post in last_posts %}
         <div class="col-md-4">
-            <div class='card mb-4 shadow-sm' style='width: 18rem;'>
+            <div class='card mb-4 shadow-sm' style='width: 22rem;'>
                 <div class="card-body">
                     <h5 class="card-title">{{ post.title }}</h5>
                     <p class="date card-subtitle mb-2 text-muted"> Publicado em {{ post.published_date }} por
                         {{post.author}}</p>
-                    <p class="card-text"> {{ post.text|linebreaksbr|slice:':250' }}... </p>
-                    <a href="#" class="btn btn-primary">Abrir Texto</a>
+                    <p class="card-text"> {{ post.text|safe|slice:':250' }}... </p>
+                    <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">Abrir Texto</a>
                 </div>
             </div>
         </div>

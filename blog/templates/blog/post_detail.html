@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    <div class='card' style='width: 100%;'>
+        <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="date card-subtitle mb-2 text-muted"> Publicado em {{ post.published_date }} por
+                {{post.author}}</p>
+            <p class="card-text"> {{ post.text|safe }} </p>
+            <a href="/" class="btn btn-primary">Retornar</a>
+        </div>
+    </div>
+
+{% endblock %}
